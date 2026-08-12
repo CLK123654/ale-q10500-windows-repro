@@ -7,9 +7,9 @@ permissions:
   contents: read
 
 jobs:
-  build-reference:
+  verify:
     runs-on: windows-2025
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,13 +17,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Build Reference on Windows
+      - name: Verify final attachments
         shell: pwsh
-        run: npm run build-reference
-      - name: Upload bootstrap Reference
+        run: node verification/verify.mjs
+      - name: Upload Windows evidence
+        if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: windows-reference-bootstrap
-          path: verification/bootstrap-output/
+          name: windows-final-evidence
+          path: verification/evidence/
           if-no-files-found: error
           retention-days: 1
