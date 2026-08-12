@@ -1,0 +1,15 @@
+request_id,requested_at_utc,owner_team,campaign_id,landing_url,requested_slug,utm_source,utm_medium,utm_campaign,utm_content,expires_at_utc,priority
+R001,2026-07-30T08:00:00Z,growth,SUMMER-APP,HTTPS://Shop.Example.com/deals?SKU=42&utm_term=shoes#top,Summer-Sale,TikTok,Paid-Social,Summer-App,hero,2026-09-15T00:00:00Z,100
+R002,2026-07-30T08:05:00Z,growth,SUMMER-APP,https://www.example.com/app?locale=zh-CN&unused=1,,Newsletter,Email,Summer-App,footer,2026-09-15T00:00:00Z,50
+R003,2026-07-30T08:08:00Z,creator,CREATOR-KIT,https://www.example.com/creator?ref=partner&utm_term=ignored,creator-kit,Influencer,Social,Creator-Kit,bio,2026-10-01T00:00:00Z,90
+R004,2026-07-30T08:12:00Z,crm,VIP-RETURN,https://www.example.com/vip?plan=gold,old-vip,CRM,SMS,Vip-Return,reminder,2026-09-01T00:00:00Z,75
+R005,2026-07-30T08:18:00Z,crm,VIP-RETURN,https://evil.example.net/phish?plan=gold,vip-phish,CRM,SMS,Vip-Return,bad,2026-09-01T00:00:00Z,40
+R006,2026-07-30T08:25:00Z,trust,TRUST-LEGAL,https://help.example.com/security?ticket=77,Bad_Slug!,Support,Email,Trust-Legal,notice,2026-08-31T00:00:00Z,30
+R007,2026-07-30T08:30:00Z,web,HTTP-DEMO,http://www.example.com/plain,plain-http,Web,Banner,Http-Demo,plain,2026-08-31T00:00:00Z,20
+R008,2026-07-30T08:40:00Z,support,HELP-OPS,https://help.example.com/articles/reset?ticket=1001&utm_source=old,help-center,Support,Email,Help-Ops,reset,2026-12-01T00:00:00Z,65
+R009,2026-07-30T08:45:00Z,billing,PLAN-UPGRADE,https://app.example.com/billing?plan=pro&screen=upgrade,plan-upgrade,Product,InApp,Plan-Upgrade,card,2026-12-31T00:00:00Z,85
+R010,2026-07-30T08:50:00Z,mobile,MOBILE-APP,https://m.example.com/app/download?locale=en-US,,Push,App,Mobile-App,download,2026-10-15T00:00:00Z,70
+R011,2026-07-30T08:55:00Z,events,WEBINAR-JULY,https://www.example.com/webinar/july?ref=partners,July-Webinar,Partners,Referral,Webinar-July,deck,2026-08-20T00:00:00Z,80
+R012,2026-07-30T09:00:00Z,commerce,FLASH-DEAL,https://shop.example.com/flash?sku=99&utm_id=abc,flash-deal,Push,App,Flash-Deal,drawer,2026-08-15T00:00:00Z,95
+R013,2026-07-30T09:05:00Z,growth,EXPERIMENT-AB,https://www.example.com/experiment?variant=B&debug=true,,Ads,CPC,Experiment-Ab,variant-b,2026-09-30T00:00:00Z,60
+R014,2026-07-30T09:10:00Z,miniapp,MINI-APP,https://m.example.com/mini?screen=home&utm_term=x,mini,QR,Offline,Mini-App,poster,2026-09-10T00:00:00Z,55
