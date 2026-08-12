@@ -1,5 +1,5 @@
-增长平台准备在input_data/migration_policy.json规定的窗口切换活动短链。你负责把input_data/shortlink_requests.csv中的申请与input_data/existing_slugs.json现网快照合并，交给路由服务一份可导入的新映射。参数政策同时给出运行时刻、可接收域名、可保留的查询参数、UTM字段处理、短码格式和冲突后缀规则。三份材料都要参与判断，原文件保持不变。
+增长平台将在迁移政策记录的变更窗口更换一批活动短链。路由团队需要一份可直接导入的跳转映射，运营团队还要知道每个申请是否接纳以及短码如何处置。输入包提供待办申请、切换前的现网快照和迁移政策，政策中规定处理时刻、域名和参数范围、UTM写法、短码格式及冲突后缀。这次变更只处理包内申请，不直接改动现网短码。请保留三份业务输入，不要在原件上写回结果。
 
-请用Node.js完成input_data/starter/build_redirect_map.mjs。程序先按政策指定的申请顺序处理记录，再通过Node.js URL接口校验HTTPS和域名，清除片段及旧UTM，只保留政策允许的普通参数，然后用申请中的活动参数重建UTM。短码要结合运行时刻和现网状态决定复用、回收或重新分配；不符合地址或短码合同的申请保留在处置记录中，不能进入路由映射。
+使用Node.js完成输入包中的待办程序。程序按迁移政策中的输出顺序整理申请，通过Node.js URL接口读取落地地址：只接受HTTPS和允许的主机，移除fragment与旧UTM，保留政策允许的普通query字段，再用申请表的活动信息重建UTM。短码处置需要同时查看当前时刻、现网归属、状态和已有目标地址，区分沿用、收回、占用冲突和拒绝。地址或短码不符合政策时，仍要记录该申请的处置结论，但不写入路由映射。
 
-交付output/src/build_redirect_map.mjs、output/redirect_map.jsonl、output/transition_log.csv和output/migration_summary.json。路由服务按redirect_map.jsonl导入，运营人员用transition_log.csv复核每个申请的去向，变更负责人从migration_summary.json核对申请、接纳、拒绝、复用、回收和冲突分配的数量。程序只使用本地输入，入口为node output/src/build_redirect_map.mjs input_data output。四份交付物能够按request_id和slug互相追溯，且汇总可以从前两份业务结果重新计算时，工作才算完成。
+把完成的程序保存为output/src/build_redirect_map.mjs，并生成output/redirect_map.jsonl、output/transition_log.csv与output/migration_summary.json。路由服务消费跳转映射，运营人员用申请处置记录跟进接纳与拒绝原因，发布负责人根据迁移汇总安排导入。导入前关注接纳、拒绝、沿用、收回和冲突分配数量；若汇总与申请处置对不上，本批次不进入切换，现网继续使用输入包中的旧映射。在输入包解压目录执行node output/src/build_redirect_map.mjs input_data output即可处理，并为当前批次设置有限等待时间。输出保留request_id和slug，发布负责人可以沿申请表、现网快照和政策文件查到对应来源。

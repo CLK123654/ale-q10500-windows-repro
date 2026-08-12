@@ -11,10 +11,10 @@ const root=path.resolve(import.meta.dirname,'..');
 const artifacts=path.join(root,'artifacts');
 const evidenceDir=path.join(root,'verification','evidence');
 const expectedHashes={
-  '输入数据包.zip':'56686842c3bbfa6aaf7b31a0159fe0d76e8a54439d6229a15f3cd9042301ddeb',
+  '输入数据包.zip':'ae61d304f9e66424cb8d819aead90cedf817ac378308d692f53f928a81e5085d',
   'reference.zip':'3d4f41b5cd63b56a8643f65f5cca11c415f0e199abfd21527a0a1593f8c5e07a',
-  '关键标准答案.xlsx':'f7c7a406b447c7a3d8381e28b2efd08e0eb4f1e4383c41209b509b50a95bacd9',
-  '任务规格转化.xlsx':'7af65f65691727dc3ebe5eb50c4a006b0a9b70b8c48780e61c14f9f13be8c5d8'
+  '关键标准答案.xlsx':'2298750de7b7404162abd367ee83b2dc0717a64ae63508a7f0840bb331f24308',
+  '任务规格转化.xlsx':'85fdea322388250dde2566117170c8442197395e7f558419fd8ed48fc28fba4f'
 };
 const expectedReference=['output/migration_summary.json','output/redirect_map.jsonl','output/src/build_redirect_map.mjs','output/transition_log.csv'];
 const assert=(value,message)=>{if(!value)throw new Error(message);};

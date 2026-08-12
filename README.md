@@ -1,3 +1,3 @@
-# Shortlink migration routing review
+# Node.js shortlink migration
 
-This repository reproduces one Node.js shortlink migration task on a GitHub-hosted Windows runner. The bootstrap workflow creates the candidate Reference with a real Node.js process. After the four final attachments are committed, the final workflow rebuilds the declared deliverables in two clean directories, compares every business result, exercises a meaningful policy change and a failing input, and records current attachment hashes.
+This repository contains a shortlink migration task for a growth platform. A Node.js program combines campaign requests, the migration policy, and the current slug snapshot to prepare a routing map, a request transition log, and a migration summary for the release team.

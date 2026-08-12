@@ -1,9 +1,9 @@
-# 短链迁移输入
+# 短链迁移材料
 
-shortlink_requests.csv来自脱敏的活动短链申请导出，提供申请身份、落地地址、短码意向、活动参数和处理优先级，是迁移处理的主清单。
+shortlink_requests.csv是活动运营导出的脱敏申请表，其中包含落地地址、短码意向、活动参数、到期时间和优先级。这是本次迁移的待办清单。
 
-migration_policy.json由增长平台发布管理人编写，规定运行时刻、变更窗口、地址政策、UTM字段、短码合同和汇总状态，是地址规范化与短码分配的规则来源。
+migration_policy.json来自增长平台的发布管理配置，说明处理时刻与切换窗口，也列出允许的主机、query字段、UTM字段、短码格式和申请顺序。
 
-existing_slugs.json是切换前的现网短码脱敏快照，记录归属团队、状态、到期时间和目标地址，用于判断复用、回收与冲突。
+existing_slugs.json保存切换前的现网短码脱敏快照。owner_team、status、expires_at_utc和target_url用于识别原短码能否沿用或收回，以及是否需要分配新后缀。
 
-starter/build_redirect_map.mjs是待完成的Node.js入口。三份业务材料都必须读取，输入保持只读，结果写入与input_data同级的output目录。
+starter/build_redirect_map.mjs是待完成的Node.js程序。把完成版保存到output/src/build_redirect_map.mjs，再在输入包解压目录执行node output/src/build_redirect_map.mjs input_data output。程序读取上述三份业务文件，将路由映射、申请处置记录和迁移汇总写入output。

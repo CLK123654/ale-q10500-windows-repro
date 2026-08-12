@@ -1,7 +1,7 @@
-读取migration_policy.json并取得运行时刻、地址政策、UTM合同、短码格式和处理顺序
-关联shortlink_requests.csv与existing_slugs.json，判断现网短码在迁移时刻的可用状态
-使用Node.js URL接口规范化落地地址并从申请字段重建活动参数
-按现网占用和本批处理结果裁决短码复用、回收、冲突分配或拒绝
-写出可供路由服务导入的redirect_map.jsonl并保持政策规定的业务顺序
-汇集全部申请的处置身份、原因和现网关联信息到transition_log.csv
-从申请处置与路由映射复算migration_summary.json并核对跨文件数量
+读取migration_policy.json中的切换时刻、地址规则、UTM字段、短码格式和申请顺序
+载入shortlink_requests.csv与existing_slugs.json，把申请与现网短码的归属、状态、到期时间和目标地址关联起来
+使用Node.js URL接口规整落地地址，保留允许的query字段并从申请表重建UTM
+根据现网占用与当前批次的已分配短码，记录沿用、收回、冲突分配或拒绝结论
+生成供路由服务导入的redirect_map.jsonl，按政策规定的业务顺序写入接纳申请
+生成transition_log.csv，为每个申请保留短码去向、处置原因和现网关联信息
+汇总申请处置与路由映射，生成供发布负责人安排导入的migration_summary.json

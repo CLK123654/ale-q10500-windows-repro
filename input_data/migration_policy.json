@@ -1,1 +1,38 @@
-{"run_at_utc":"2026-07-31T00:00:00Z","change_window":{"starts_at_utc":"2026-07-31T02:00:00Z","duration_minutes":30,"rollback_owner":"routing-oncall"},"allowed_hosts":["www.example.com","shop.example.com","help.example.com","app.example.com","m.example.com"],"allowed_existing_query_keys":["sku","plan","locale","ticket","screen","variant","ref"],"allowed_utm_keys":["utm_source","utm_medium","utm_campaign","utm_content"],"lowercase_utm_values":["utm_source","utm_medium"],"slug_pattern":"^[a-z0-9][a-z0-9-]{3,15}$","fallback_suffix_separator":"-r","output_order":"priority_desc_then_requested_at_then_request_id","summary_status":"ready_for_import_review"}
+{
+  "run_at_utc": "2026-07-31T00:00:00Z",
+  "change_window": {
+    "starts_at_utc": "2026-07-31T02:00:00Z",
+    "duration_minutes": 30,
+    "rollback_owner": "routing-oncall"
+  },
+  "allowed_hosts": [
+    "www.example.com",
+    "shop.example.com",
+    "help.example.com",
+    "app.example.com",
+    "m.example.com"
+  ],
+  "allowed_existing_query_keys": [
+    "sku",
+    "plan",
+    "locale",
+    "ticket",
+    "screen",
+    "variant",
+    "ref"
+  ],
+  "allowed_utm_keys": [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content"
+  ],
+  "lowercase_utm_values": [
+    "utm_source",
+    "utm_medium"
+  ],
+  "slug_pattern": "^[a-z0-9][a-z0-9-]{3,15}$",
+  "fallback_suffix_separator": "-r",
+  "output_order": "priority_desc_then_requested_at_then_request_id",
+  "summary_status": "ready_for_import_review"
+}

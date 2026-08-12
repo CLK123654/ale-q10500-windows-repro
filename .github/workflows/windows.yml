@@ -1,6 +1,9 @@
 name: windows-2025
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:

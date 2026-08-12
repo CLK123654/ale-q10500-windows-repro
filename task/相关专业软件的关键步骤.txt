@@ -1,8 +1,8 @@
-1. 使用Node.js读取input_data/migration_policy.json，解析run_at_utc、allowed_hosts、allowed_existing_query_keys、allowed_utm_keys、lowercase_utm_values、slug_pattern、fallback_suffix_separator和output_order。
-2. 载入shortlink_requests.csv并检查request_id唯一性，按output_order对应的priority、requested_at_utc和request_id组成稳定处理序列。
-3. 载入existing_slugs.json，以slug索引owner_team、status、expires_at_utc和target_url，并按run_at_utc区分仍占用与可回收记录。
-4. 对每个landing_url创建Node.js URL对象，校验HTTPS和allowed_hosts，删除hash与旧UTM，保留政策允许的普通参数，再加入申请行的UTM值。
-5. 根据slug_pattern校验申请短码或从campaign_id生成候选值，结合现网与批内占用选择复用、回收或fallback_suffix_separator后缀。
-6. 将接纳申请按业务顺序写入output/redirect_map.jsonl，同时把每个申请的resolution、reason和关联现网状态写入output/transition_log.csv。
-7. 从本次申请、路由映射和处置记录聚合output/migration_summary.json，检查request_count等于各处置分支之和，accepted_count与路由映射行数一致。
-8. 回读三份业务结果，确认request_id、slug与聚合数量闭合，再保留完成后的Node.js程序到output/src/build_redirect_map.mjs。
+1. 使用Node.js读取input_data/migration_policy.json，取得处理时刻、地址范围、UTM字段、短码格式和排序规则。
+2. 载入shortlink_requests.csv，根据output_order把申请排成待处理队列。
+3. 载入existing_slugs.json，以slug关联owner_team、status、expires_at_utc和target_url，按run_at_utc区分仍在占用和可收回记录。
+4. 将landing_url交给Node.js URL接口，限定HTTPS与allowed_hosts，移除fragment和旧UTM，保留允许的query字段并写入申请表中的UTM值。
+5. 按slug_pattern整理申请短码或campaign_id，再结合现网占用和本批已分配短码，选择原短码或fallback_suffix_separator后缀。
+6. 按业务顺序把接纳申请写入output/redirect_map.jsonl，并在output/transition_log.csv中保留全部申请的resolution、reason和现网关联信息。
+7. 从申请、路由映射和处置记录汇总output/migration_summary.json，使运营分支数量与导入规模相互对应。
+8. 保存完成的Node.js程序到output/src/build_redirect_map.mjs，浏览三份业务结果中的request_id、slug和处置数量。
