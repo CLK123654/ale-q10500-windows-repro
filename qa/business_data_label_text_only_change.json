@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "task_key": "id:10500",
+  "change_type": "business_data_label_text_only",
+  "windows_rerun_required": false,
+  "business_semantics_changed": false,
+  "unchanged": [
+    "data",
+    "rules",
+    "code",
+    "attachment_member_structure",
+    "answers",
+    "score_semantics"
+  ],
+  "changes": [
+    "Prompt将否定式输入保护改写为现网短码只读快照和output结果目录",
+    "环境删除额外依赖、GPU和无限等待的否定式排比",
+    "评分规范层级名称并将离线边界改为三份本地业务来源",
+    "规格删除完成条件、可验证点和不适合作为评分点模板模块，改为迁移目标、Node.js步骤、材料边界、结果对账和实现边界"
+  ],
+  "current_attachment_sha256": {
+    "输入数据包.zip": "ae61d304f9e66424cb8d819aead90cedf817ac378308d692f53f928a81e5085d",
+    "reference.zip": "3d4f41b5cd63b56a8643f65f5cca11c415f0e199abfd21527a0a1593f8c5e07a",
+    "关键标准答案.xlsx": "c28a59a502bcd780c79453eabc60b406ec05276af7709dc50f1554a950ee4252",
+    "任务规格转化.xlsx": "5ff2e55b39135557c60fe8ec06bd860d47e46311f5df2f88a5afda6da51c8e53"
+  },
+  "reused_windows_evidence": {
+    "run_id": 31615897021,
+    "file": "../../evidence/10500/run-31615897021/windows-final-evidence/windows-verification.json",
+    "reason": "申请、政策、现网快照、Node.js程序、Reference成员和评分业务语义未变；本轮只调整候选可见文字和任务规格。"
+  }
+}

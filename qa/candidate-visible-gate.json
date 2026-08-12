@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "scope": [
+    "17字段本地镜像",
+    "输入数据包全部成员",
+    "reference全部成员",
+    "关键标准答案五页全部单元格",
+    "任务规格转化全部单元格"
+  ],
+  "manual_context_review": "PASS",
+  "manual_notes": [
+    "candidate是短码分配函数中的局部变量，语义为待分配短码，不指答题者",
+    "URL hash未出现；fragment为业务URL片段",
+    "可验证点是任务规格固定模块名，内容仅描述可从业务输入对应的字段"
+  ],
+  "hits": []
+}

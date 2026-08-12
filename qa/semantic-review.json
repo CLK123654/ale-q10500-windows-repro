@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "role": "增长平台迁移工程师",
+  "consumers": {
+    "output/redirect_map.jsonl": "路由服务导入",
+    "output/transition_log.csv": "运营人员跟进每项申请",
+    "output/migration_summary.json": "发布负责人决定是否进入导入",
+    "output/src/build_redirect_map.mjs": "迁移工程师维护与执行"
+  },
+  "consumed_business_inputs": [
+    "input_data/shortlink_requests.csv",
+    "input_data/migration_policy.json",
+    "input_data/existing_slugs.json"
+  ],
+  "causal_work_parts": [
+    "按政策顺序读取申请",
+    "规范化URL并重建UTM",
+    "关联现网快照裁决短码",
+    "生成路由映射和逐项处置",
+    "从业务结果归集迁移汇总"
+  ],
+  "main_software_irreplaceability": "Node.js真实运行时的URL解析、主机规范化、查询参数编码和跨平台文件入口承担核心业务操作",
+  "hard_numbers": [
+    "run_at_utc来自input_data/migration_policy.json",
+    "变更窗口来自input_data/migration_policy.json的change_window",
+    "业务结果中的计数由申请处置和路由映射分类汇总"
+  ],
+  "sample_answer_leakage": false,
+  "full_result_set_leakage_in_prompt_or_score": false,
+  "internal_qa_leakage": false
+}
