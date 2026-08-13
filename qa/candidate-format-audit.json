@@ -15,9 +15,9 @@
     "任务规格转化全部单元格",
     "公开仓库候选可见正文和业务材料"
   ],
-  "natural_language_scope_count": 214,
-  "syntax_or_controlled_value_exemption_count": 19,
-  "controlled_enum_exemption_count": 12,
+  "natural_language_scope_count": 217,
+  "syntax_or_controlled_value_exemption_count": 24,
+  "controlled_enum_exemption_count": 7,
   "controlled_enum_exemption": [
     {
       "location": "ALE表第2行第2列",
@@ -52,35 +52,6 @@
     {
       "location": "task_fields.学科一级分类",
       "value": "Computing, Data & Mathematical Sciences 计算、数据与数学科学",
-      "reason": "Lark受控单选或多选枚举逐字副本"
-    },
-    {
-      "location": "task_fields.学科二级分类",
-      "value": "软件工程",
-      "reason": "Lark受控单选或多选枚举逐字副本"
-    },
-    {
-      "location": "task_fields.题目难度",
-      "value": "高",
-      "reason": "Lark受控单选或多选枚举逐字副本"
-    },
-    {
-      "location": "task_fields.涉及的专业软件",
-      "value": "Node.js",
-      "reason": "Lark受控单选或多选枚举逐字副本"
-    },
-    {
-      "location": "task_fields.包含的操作类型",
-      "value": [
-        "领域专业软件操作",
-        "文件和数据处理",
-        "脚本/命令/程序化处理"
-      ],
-      "reason": "Lark受控单选或多选枚举逐字副本"
-    },
-    {
-      "location": "task_fields.是否支持Windows",
-      "value": "是",
       "reason": "Lark受控单选或多选枚举逐字副本"
     }
   ],
@@ -159,6 +130,26 @@
     },
     {
       "location": "repo:package.json",
+      "reason": "候选可见结构化数据、程序语法或二进制附件；自然语言镜像另行逐项扫描"
+    },
+    {
+      "location": "repo:qa/business_data_label_text_only_change.json",
+      "reason": "候选可见结构化数据、程序语法或二进制附件；自然语言镜像另行逐项扫描"
+    },
+    {
+      "location": "repo:qa/candidate-format-audit.json",
+      "reason": "候选可见结构化数据、程序语法或二进制附件；自然语言镜像另行逐项扫描"
+    },
+    {
+      "location": "repo:qa/candidate-visible-gate.json",
+      "reason": "候选可见结构化数据、程序语法或二进制附件；自然语言镜像另行逐项扫描"
+    },
+    {
+      "location": "repo:qa/humanizer-review.json",
+      "reason": "候选可见结构化数据、程序语法或二进制附件；自然语言镜像另行逐项扫描"
+    },
+    {
+      "location": "repo:qa/semantic-review.json",
       "reason": "候选可见结构化数据、程序语法或二进制附件；自然语言镜像另行逐项扫描"
     }
   ],
