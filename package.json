@@ -3,7 +3,5 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build-reference": "node verification/build-reference.mjs"
-  }
+  "scripts": {}
 }
